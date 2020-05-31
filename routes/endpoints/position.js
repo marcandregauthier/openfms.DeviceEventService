@@ -1,9 +1,11 @@
-﻿import Repository from '../../repository/position';
+﻿import Repository from '../../pkg/repository/generic';
+import Model from '../../model/position';
+
 
 const get = async (request, response) => {
     console.log('position.get');
 
-    await Repository.get().then(result => {
+    await Repository.get(Model).then(result => {
         if (result.error) {
             console.log(`position.get failed : ${result.error}`);
             response.status(500);
@@ -18,7 +20,7 @@ const add = async (request, response) => {
     console.log('position.add: ' + request.body);
     request.body.Source = 'DeviceEventService';
 
-    Repository.add(request.body)
+    Repository.add(Model, request.body)
         .then(result => {
             if (result.error) {
                 console.log(`position.add failed : ${result.error}`);
@@ -33,7 +35,7 @@ const add = async (request, response) => {
 const clearAll = async (request, response) => {
     console.log(`position.clearAll`);
 
-    Repository.clearAll()
+    Repository.clearAll(Model)
         .then(result => {
             if (result.error) {
                 console.log(`position.clearAll failed : ${result.error}`);

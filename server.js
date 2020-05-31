@@ -20,12 +20,13 @@ const webServer = app.listen(port, () => {
 });
 
 import mq from './pkg/mq/receiver';
-import PositionRepository from './repository/position';
+import Repository from './pkg/repository/generic';
+import PositionModel from './model/position';
 
 mq.getInstance()
     .then(broker => {
         broker.subscribe('openfms.position', (msg, ack) => {
-            PositionRepository.add(JSON.parse(msg.content.toString()));
+            Repository.add(PositionModel, JSON.parse(msg.content.toString()));
             ack();
         });
     });

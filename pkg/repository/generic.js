@@ -1,7 +1,5 @@
-﻿import Model from '../model/position';
-
-const get = async () => {
-    console.log('repo.position.get');
+﻿const get = async (Model) => {
+    console.log('repository.get');
 
     return await Model.find((error, items) => {
         if (error) {
@@ -12,8 +10,8 @@ const get = async () => {
     });
 };
 
-const add = async (jsonEntity) => {
-    console.log(`repo.position.add: ${jsonEntity}`);
+const add = async (Model, jsonEntity) => {
+    console.log(`repository.add: ${jsonEntity}`);
     jsonEntity.CreatedDate = new Date();
 
     let model = new Model(jsonEntity);
@@ -26,12 +24,12 @@ const add = async (jsonEntity) => {
         });
 };
     
-const clearAll = async () => {
-    console.log(`repo.position.clearAll`);
+const clearAll = async (Model) => {
+    console.log(`repository.clearAll`);
 
     return await Model.deleteMany({}, error => {
         if (error) {
-            console.log(`repo.position.clearAll: ${error}`);
+            console.log(`repository.clearAll: ${error}`);
             return { error: error };
         } else {
             return null;
