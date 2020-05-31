@@ -16,7 +16,7 @@ const get = async (request, response) => {
 
 const add = async (request, response) => {
     console.log('position.add: ' + request.body);
-    request.body.Source = 'RealtimeService';
+    request.body.Source = 'DeviceEventService';
 
     Repository.add(request.body)
         .then(result => {

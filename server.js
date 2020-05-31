@@ -19,7 +19,7 @@ const webServer = app.listen(port, () => {
     console.log(`DeviceEventService running on port: ${port}`); 
 });
 
-import mq from './mq/receiver';
+import mq from './pkg/mq/receiver';
 import PositionRepository from './repository/position';
 
 mq.getInstance()

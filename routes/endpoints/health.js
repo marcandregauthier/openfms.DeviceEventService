@@ -1,5 +1,5 @@
 ﻿const get = async (request, response) => {
-    response.send('Working');
+    response.send();
 };
 
 export default { get };
