@@ -1,0 +1,19 @@
+{
+  "name": "openfms.deviceeventservice",
+  "version": "1.0.0",
+  "description": "Manage persistance for every devices events",
+  "main": "startesm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcandregauthier/openfms.DeviceEventService.git"
+  },
+  "author": "marcgauthier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcandregauthier/openfms.DeviceEventService/issues"
+  },
+  "homepage": "https://github.com/marcandregauthier/openfms.DeviceEventService#readme"
+}
