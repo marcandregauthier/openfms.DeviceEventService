@@ -5,6 +5,8 @@ import bodyParser from 'body-parser';
 import router from './routes';
 import mongo from './pkg/database/mongo';
 
+import process from './pkg/process/process';
+
 
 const app = express();
 app.use(cors());
@@ -14,9 +16,9 @@ app.use(bodyParser.json());
 app.use('/', router);
 const database = new mongo();
 
-const port = 5002;
+const port = require('./package.json').port;
 const webServer = app.listen(port, () => {
-    console.log(`DeviceEventService running on port: ${port}`); 
+    console.log(`${require('./package.json').name}: ${port}`); 
 });
 
 import mq from './pkg/mq/receiver';

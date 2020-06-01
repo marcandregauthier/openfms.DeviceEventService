@@ -13,6 +13,8 @@
 const add = async (Model, jsonEntity) => {
     console.log(`repository.add: ${jsonEntity}`);
     jsonEntity.CreatedDate = new Date();
+    if (!jsonEntity.Source)
+        jsonEntity.Source = require('../../package.json').name;
 
     let model = new Model(jsonEntity);
     return await model.save()

@@ -1,5 +1,20 @@
 ﻿const sql = require('mssql');
-//const config = require('./config/config');
+
+/*
+    USAGE: 
+    const query =
+        `
+        SELECT * FROM TableName 
+        `;
+    
+    database.query_list(query, (err, records) => {
+        console.log('test 1');
+        // if (err != null) {
+        //     return next(err);
+        // }
+        res.send(records);
+    });
+*/
 
 module.exports = {
     query_list: (query, callback) => {
