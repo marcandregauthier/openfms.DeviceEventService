@@ -64,4 +64,4 @@ const clearAll = async (Model) => {
     });
 };
 
-export default { get, add, clearAll };
+export default { find, get, add, update, clearAll };

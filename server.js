@@ -5,8 +5,6 @@ import bodyParser from 'body-parser';
 import router from './routes';
 import mongo from './pkg/database/mongo';
 
-import process from './pkg/process/process';
-
 
 const app = express();
 app.use(cors());
